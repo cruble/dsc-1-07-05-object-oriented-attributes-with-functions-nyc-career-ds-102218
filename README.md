@@ -53,9 +53,9 @@ class Business():
 ```
 
 ## Thinking about appropriate structures
-At this point in creating our data structures, we can think about what we want a customer to be. It could be a dictionary storing various attributes about that customer such as name, orders, etc. It could also be a class of it's own. Thinking through the use case and allowing flexability is a key design decision.  
+At this point in creating our data structures, we can think about what we want a customer to be. It could be a dictionary storing various attributes about that customer such as name, orders, etc. It could also be a class of it's own. Thinking through the use case and allowing flexibility is a key design decision.  
 
-For maximum future flexability, we'll go through the added effort of defining an additional class for customers.
+For maximum future flexibility, we'll go through the added effort of defining an additional class for customers.
 
 
 ```python
@@ -68,7 +68,7 @@ class Customer():
         self.orders.append({'item_name': item_name, 'item_cost':item_cost, 'quantity':quantity})
 ```
 
-## Writing more complicated methods using attriubtes
+## Writing more complicated methods using attributes
 
 At this point, let's take a look at an example that is a bit more complicated now that we have some nested structures. Let's imagine a reporting method for the business that will return the top 5 customers to date based on their purchase history. To do this, we will have to determine the total purchases made by customers and then sort our customers by this. Currently the data needed for that is stored within a customer object within the orders attribute which is a list of dictionaries. Quite the mouthful there; an object with an attribute that's a list of dictionaries. Breaking down the problem into constituent parts can help us reduce solving the same problems over and over again. As such, before we write a larger business function to retrieve the top 5 customers, let's update our customer object to also keep track of total spent.
 
